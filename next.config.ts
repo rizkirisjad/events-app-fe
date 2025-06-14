@@ -9,7 +9,7 @@ const nextConfig: NextConfig = {
       },
       {
         protocol: "https",
-        hostname: "source.unsplash.com", // ✅ tambahkan ini
+        hostname: "plus.unsplash.com",
       },
     ],
   },

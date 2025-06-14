@@ -1,5 +1,10 @@
-import axios from "axios";
+import axios from 'axios';
 
-const developmentUrl = "http://localhost:8000/api/v1";
+const api = axios.create({
+  baseURL: process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000',
+  headers: {
+    'Content-Type': 'application/json',
+  },
+});
 
-export const customFetch = axios.create({ baseURL: developmentUrl });
+export default api;
