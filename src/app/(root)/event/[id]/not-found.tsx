@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import Link from "next/link";
 
 export default function NotFound() {
   return (
@@ -6,7 +6,7 @@ export default function NotFound() {
       <div className="text-center space-y-4">
         <h2 className="text-3xl font-bold text-gray-900">Event Not Found</h2>
         <p className="text-gray-600">
-          Sorry, we couldn't find the event you're looking for.
+          Sorry, we couldn&apos;t find the event you&apos;re looking for.
         </p>
         <Link
           href="/"
@@ -17,4 +17,4 @@ export default function NotFound() {
       </div>
     </div>
   );
-} 
+}
