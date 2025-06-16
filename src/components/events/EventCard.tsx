@@ -59,9 +59,9 @@ export default function EventCard({ event }: EventCardProps) {
       </div>
 
       <div className="p-4 space-y-3">
-        <h3 className="text-xl font-semibold text-gray-900 group-hover:text-blue-600">
+        <h2 className="text-xl font-semibold text-gray-900 group-hover:text-blue-600">
           {event.title}
-        </h3>
+        </h2>
 
         <p className="text-gray-600 line-clamp-2">{event.description}</p>
 

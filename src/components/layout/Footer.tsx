@@ -8,7 +8,7 @@ export default function Footer() {
         {/* Left: Brand Info */}
         <div>
           <h2 className="text-xl font-semibold mb-2">Eventin</h2>
-          <p className="text-sm text-gray-400">
+          <p className="text-sm text-gray-300">
             Discover, attend, and manage events effortlessly.
           </p>
         </div>
@@ -74,7 +74,7 @@ export default function Footer() {
       </div>
 
       {/* Bottom Bar */}
-      <div className="mt-8 border-t border-gray-700 pt-4 text-sm text-center text-gray-500">
+      <div className="mt-8 border-t border-gray-700 pt-4 text-sm text-center text-gray-300">
         © {new Date().getFullYear()} Eventin Management Platform. All rights
         reserved.
       </div>

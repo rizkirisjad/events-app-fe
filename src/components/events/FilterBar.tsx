@@ -1,36 +1,36 @@
-import { useState } from 'react';
-import * as Select from '@radix-ui/react-select';
-import { ChevronDown } from 'lucide-react';
+import { useState } from "react";
+import * as Select from "@radix-ui/react-select";
+import { ChevronDown } from "lucide-react";
 
 interface FilterBarProps {
   onFilterChange?: (filters: { category: string; location: string }) => void;
 }
 
 const categories = [
-  'All Categories',
-  'Music',
-  'Sports',
-  'Arts & Theater',
-  'Food & Drink',
-  'Business',
-  'Technology',
+  "All Categories",
+  "Music",
+  "Sports",
+  "Arts & Theater",
+  "Food & Drink",
+  "Business",
+  "Technology",
 ];
 
 const locations = [
-  'All Locations',
-  'Jakarta',
-  'Bandung',
-  'Surabaya',
-  'Yogyakarta',
-  'Bali',
+  "All Locations",
+  "Jakarta",
+  "Bandung",
+  "Surabaya",
+  "Yogyakarta",
+  "Bali",
 ];
 
 export default function FilterBar({ onFilterChange }: FilterBarProps) {
-  const [selectedCategory, setSelectedCategory] = useState('All Categories');
-  const [selectedLocation, setSelectedLocation] = useState('All Locations');
+  const [selectedCategory, setSelectedCategory] = useState("All Categories");
+  const [selectedLocation, setSelectedLocation] = useState("All Locations");
 
-  const handleFilterChange = (type: 'category' | 'location', value: string) => {
-    if (type === 'category') {
+  const handleFilterChange = (type: "category" | "location", value: string) => {
+    if (type === "category") {
       setSelectedCategory(value);
       onFilterChange?.({
         category: value,
@@ -49,9 +49,12 @@ export default function FilterBar({ onFilterChange }: FilterBarProps) {
     <div className="flex gap-4">
       <Select.Root
         value={selectedCategory}
-        onValueChange={(value) => handleFilterChange('category', value)}
+        onValueChange={(value) => handleFilterChange("category", value)}
       >
-        <Select.Trigger className="inline-flex items-center justify-between px-4 py-2 border border-gray-300 rounded-md bg-white text-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
+        <Select.Trigger
+          className="inline-flex items-center justify-between px-4 py-2 border border-gray-300 rounded-md bg-white text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+          aria-label="Select category"
+        >
           <Select.Value placeholder="Select category" />
           <Select.Icon>
             <ChevronDown className="h-4 w-4" />
@@ -77,9 +80,12 @@ export default function FilterBar({ onFilterChange }: FilterBarProps) {
 
       <Select.Root
         value={selectedLocation}
-        onValueChange={(value) => handleFilterChange('location', value)}
+        onValueChange={(value) => handleFilterChange("location", value)}
       >
-        <Select.Trigger className="inline-flex items-center justify-between px-4 py-2 border border-gray-300 rounded-md bg-white text-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
+        <Select.Trigger
+          className="inline-flex items-center justify-between px-4 py-2 border border-gray-300 rounded-md bg-white text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+          aria-label="Select location"
+        >
           <Select.Value placeholder="Select location" />
           <Select.Icon>
             <ChevronDown className="h-4 w-4" />
@@ -104,4 +110,4 @@ export default function FilterBar({ onFilterChange }: FilterBarProps) {
       </Select.Root>
     </div>
   );
-} 
+}
