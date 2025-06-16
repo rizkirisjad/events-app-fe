@@ -4,6 +4,7 @@ import { format } from "date-fns";
 import Image from "next/image";
 import { Calendar, MapPin, Tag } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { IDR } from "@/lib/formatter";
 
 interface EventDetail {
   id: string;
@@ -30,11 +31,7 @@ export default async function EventDetailPage({ params }: PageProps) {
     const event = response.data;
 
     const formattedDate = format(new Date(event.date), "EEEE, MMMM dd, yyyy");
-    const formattedPrice = new Intl.NumberFormat("id-ID", {
-      style: "currency",
-      currency: "IDR",
-      minimumFractionDigits: 0,
-    }).format(event.price);
+    const formattedPrice = IDR(event.price);
 
     return (
       <div className="max-w-5xl mx-auto px-4 py-8">
